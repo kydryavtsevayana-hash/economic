@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Экономический медиарадар</title>
+  <meta name="description" content="Интерактивный учебный сайт для формирования критического мышления школьников при анализе экономической информации в СМИ и социальных сетях." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero" id="top">
+    <nav class="nav" aria-label="Основная навигация">
+      <a class="logo" href="#top" aria-label="На главную">
+        <span class="logo-mark">₽</span>
+        <span>Экономический медиарадар</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu">☰</button>
+      <div class="nav-links" id="navMenu">
+        <a href="#analyzer">Проверь новость</a>
+        <a href="#checklist">Чек-лист</a>
+        <a href="#cases">Кейсы</a>
+        <a href="#test">Мини-тест</a>
+        <a href="#teacher">Для учителя</a>
+      </div>
+    </nav>
+
+    <section class="hero-content">
+      <div class="hero-text">
+        <p class="eyebrow">Учебный продукт к курсовой работе</p>
+        <h1>Учимся критически анализировать экономическую информацию в СМИ и социальных сетях</h1>
+        <p class="lead">Сайт помогает школьникам проверять новости, посты, рекламу и финансовые советы: отличать факты от мнений, находить манипуляции и делать выводы на основе данных.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#analyzer">Проверить сообщение</a>
+          <a class="btn secondary" href="#teacher">Материалы для урока</a>
+        </div>
+      </div>
+      <div class="hero-card" aria-label="Краткая схема анализа">
+        <div class="radar-circle">
+          <span>MEDIA<br/>RADAR</span>
+        </div>
+        <ul class="radar-list">
+          <li><strong>Источник</strong><span>Кто сообщает?</span></li>
+          <li><strong>Данные</strong><span>Есть ли доказательства?</span></li>
+          <li><strong>Манипуляции</strong><span>Что вызывает эмоции?</span></li>
+          <li><strong>Вывод</strong><span>Можно ли доверять?</span></li>
+        </ul>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="section intro" id="about">
+      <div class="section-heading">
+        <p class="eyebrow">Зачем это нужно</p>
+        <h2>Экономическая информация влияет на решения школьников и их семей</h2>
+      </div>
+      <div class="grid three">
+        <article class="info-card">
+          <span class="icon">📰</span>
+          <h3>Новости</h3>
+          <p>Сообщения об инфляции, ценах, налогах, зарплатах и курсах валют требуют проверки источников и данных.</p>
+        </article>
+        <article class="info-card">
+          <span class="icon">📱</span>
+          <h3>Социальные сети</h3>
+          <p>Посты и короткие видео часто используют эмоциональные формулировки, упрощения и скрытую рекламу.</p>
+        </article>
+        <article class="info-card">
+          <span class="icon">💳</span>
+          <h3>Финансовые советы</h3>
+          <p>Обещания быстрого заработка, «лёгких инвестиций» и кредитов «без переплаты» важно анализировать критически.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section analyzer-section" id="analyzer">
+      <div class="section-heading">
+        <p class="eyebrow">Инструмент для урока</p>
+        <h2>Проверь экономическое сообщение</h2>
+        <p>Вставьте текст новости, поста, рекламного объявления или финансового совета. Ответьте на вопросы — сайт покажет уровень доверия и даст рекомендации.</p>
+      </div>
+
+      <div class="analyzer-layout">
+        <form class="analyzer" id="analyzerForm">
+          <label class="field">
+            <span>Текст сообщения</span>
+            <textarea id="messageText" rows="8" placeholder="Например: «Только сегодня вложи 5000 рублей и получи доход 30% в месяц. Эксперты уверены: цены скоро резко вырастут!»"></textarea>
+          </label>
+
+          <div class="question-grid">
+            <label class="question"><input type="checkbox" data-score="12" id="qSource"> Указан понятный источник информации</label>
+            <label class="question"><input type="checkbox" data-score="10" id="qAuthor"> Указан автор или организация</label>
+            <label class="question"><input type="checkbox" data-score="12" id="qDate"> Есть дата публикации</label>
+            <label class="question"><input type="checkbox" data-score="14" id="qData"> Приведены проверяемые данные или статистика</label>
+            <label class="question"><input type="checkbox" data-score="12" id="qCompare"> Информацию можно сравнить с другими источниками</label>
+            <label class="question"><input type="checkbox" data-score="-14" id="qEmotion"> Есть эмоциональные слова или давление</label>
+            <label class="question"><input type="checkbox" data-score="-16" id="qUrgent"> Есть призыв срочно купить, вложить деньги или перейти по ссылке</label>
+            <label class="question"><input type="checkbox" data-score="-12" id="qProfit"> Обещан быстрый или гарантированный заработок</label>
+            <label class="question"><input type="checkbox" data-score="10" id="qFactOpinion"> Можно отделить факты от мнений</label>
+            <label class="question"><input type="checkbox" data-score="10" id="qBenefit"> Понятно, кому может быть выгодно сообщение</label>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Получить результат</button>
+            <button class="btn ghost" type="button" id="fillExample">Заполнить пример</button>
+            <button class="btn ghost" type="reset" id="resetAnalyzer">Очистить</button>
+          </div>
+        </form>
+
+        <aside class="result-panel" aria-live="polite">
+          <h3>Результат анализа</h3>
+          <div class="score-ring" id="scoreRing"><span id="scoreValue">—</span></div>
+          <p class="verdict" id="verdict">Заполните форму, чтобы получить оценку.</p>
+          <ul class="recommendations" id="recommendations">
+            <li>Начните с определения источника, автора и даты публикации.</li>
+            <li>Проверьте, есть ли факты, цифры и ссылки на первоисточники.</li>
+          </ul>
+          <button class="btn secondary full" type="button" id="printResult">Распечатать результат</button>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="checklist">
+      <div class="section-heading">
+        <p class="eyebrow">Памятка ученику</p>
+        <h2>Чек-лист критического анализа</h2>
+      </div>
+      <ol class="checklist">
+        <li><strong>Проверь источник.</strong> Где опубликована информация: СМИ, блог, реклама, официальный сайт?</li>
+        <li><strong>Найди автора.</strong> Можно ли понять, кто отвечает за сообщение?</li>
+        <li><strong>Проверь дату.</strong> Экономические данные быстро устаревают.</li>
+        <li><strong>Отдели факт от мнения.</strong> Факт можно проверить, мнение выражает оценку.</li>
+        <li><strong>Найди данные.</strong> Есть ли статистика, ссылка на исследование, документ или официальный источник?</li>
+        <li><strong>Сравни с другими источниками.</strong> Одно сообщение не должно быть единственным основанием для вывода.</li>
+        <li><strong>Ищи эмоциональные формулировки.</strong> Слова «шок», «срочно», «все потеряют деньги» могут быть манипуляцией.</li>
+        <li><strong>Подумай о выгоде.</strong> Кто может получить пользу от того, что ты поверишь сообщению?</li>
+        <li><strong>Оцени риски.</strong> Особенно осторожно относись к кредитам, инвестициям и обещаниям быстрого заработка.</li>
+        <li><strong>Сделай вывод.</strong> Доверять, проверять дополнительно или считать сообщение сомнительным?</li>
+      </ol>
+    </section>
+
+    <section class="section cases" id="cases">
+      <div class="section-heading">
+        <p class="eyebrow">Практические задания</p>
+        <h2>Экономические кейсы для групповой работы</h2>
+        <p>Выберите кейс, обсудите его в группе и заполните таблицу анализа.</p>
+      </div>
+      <div class="case-controls" role="tablist" aria-label="Кейсы">
+        <button class="case-tab active" data-case="0" type="button">Инвестиции</button>
+        <button class="case-tab" data-case="1" type="button">Рост цен</button>
+        <button class="case-tab" data-case="2" type="button">Кредит</button>
+        <button class="case-tab" data-case="3" type="button">Скидка</button>
+      </div>
+      <article class="case-card" id="caseCard">
+        <p class="case-label" id="caseLabel">Кейс 1</p>
+        <h3 id="caseTitle">Блогер обещает доход 30% в месяц</h3>
+        <p id="caseText">В социальной сети блогер пишет: «Я нашёл лучший способ заработать. Вложи 10 000 рублей сегодня и уже через месяц получишь 13 000. Риск отсутствует, количество мест ограничено».</p>
+        <div class="analysis-table-wrap">
+          <table class="analysis-table">
+            <thead><tr><th>Вопрос</th><th>Ответ группы</th></tr></thead>
+            <tbody>
+              <tr><td>Какой источник информации?</td><td contenteditable="true">Введите ответ...</td></tr>
+              <tr><td>Какие факты можно проверить?</td><td contenteditable="true">Введите ответ...</td></tr>
+              <tr><td>Какие слова вызывают эмоции?</td><td contenteditable="true">Введите ответ...</td></tr>
+              <tr><td>Какие экономические понятия встречаются?</td><td contenteditable="true">Введите ответ...</td></tr>
+              <tr><td>Какой вывод можно сделать?</td><td contenteditable="true">Введите ответ...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+
+    <section class="section test-section" id="test">
+      <div class="section-heading">
+        <p class="eyebrow">Самопроверка</p>
+        <h2>Мини-тест по критическому анализу</h2>
+      </div>
+      <form class="quiz" id="quizForm">
+        <fieldset>
+          <legend>1. Какой признак повышает доверие к экономической новости?</legend>
+          <label><input type="radio" name="q1" value="0"> Заголовок написан очень эмоционально</label>
+          <label><input type="radio" name="q1" value="1"> Есть ссылка на источник данных</label>
+          <label><input type="radio" name="q1" value="0"> Автор просит срочно купить товар</label>
+        </fieldset>
+        <fieldset>
+          <legend>2. Что является мнением?</legend>
+          <label><input type="radio" name="q2" value="0"> «Цена товара выросла на 5% за месяц»</label>
+          <label><input type="radio" name="q2" value="1"> «Это самый выгодный товар года»</label>
+          <label><input type="radio" name="q2" value="0"> «Публикация вышла 10 апреля»</label>
+        </fieldset>
+        <fieldset>
+          <legend>3. Что должно насторожить при финансовом совете в соцсетях?</legend>
+          <label><input type="radio" name="q3" value="1"> Обещание гарантированного высокого дохода</label>
+          <label><input type="radio" name="q3" value="0"> Указание рисков</label>
+          <label><input type="radio" name="q3" value="0"> Ссылка на официальный документ</label>
+        </fieldset>
+        <fieldset>
+          <legend>4. Зачем сравнивать новость с другими источниками?</legend>
+          <label><input type="radio" name="q4" value="1"> Чтобы проверить полноту и достоверность информации</label>
+          <label><input type="radio" name="q4" value="0"> Чтобы найти самый громкий заголовок</label>
+          <label><input type="radio" name="q4" value="0"> Чтобы не читать сам текст новости</label>
+        </fieldset>
+        <fieldset>
+          <legend>5. Какой вопрос помогает выявить возможную манипуляцию?</legend>
+          <label><input type="radio" name="q5" value="0"> Нравится ли мне дизайн публикации?</label>
+          <label><input type="radio" name="q5" value="1"> Кому выгодно, чтобы я поверил этому сообщению?</label>
+          <label><input type="radio" name="q5" value="0"> Сколько лайков у поста?</label>
+        </fieldset>
+        <div class="form-actions">
+          <button class="btn primary" type="submit">Проверить тест</button>
+          <button class="btn ghost" type="reset">Сбросить</button>
+        </div>
+      </form>
+      <div class="quiz-result" id="quizResult" aria-live="polite"></div>
+    </section>
+
+    <section class="section teacher" id="teacher">
+      <div class="section-heading">
+        <p class="eyebrow">Методический блок</p>
+        <h2>Материалы для учителя экономики</h2>
+      </div>
+      <div class="teacher-grid">
+        <article class="teacher-card">
+          <h3>Цель урока</h3>
+          <p>Сформировать у обучающихся умение критически оценивать экономические сообщения из СМИ и социальных сетей.</p>
+        </article>
+        <article class="teacher-card">
+          <h3>Темы, где можно использовать сайт</h3>
+          <p>Инфляция, банки и кредиты, семейный бюджет, реклама, потребительское поведение, предпринимательство, инвестиции.</p>
+        </article>
+        <article class="teacher-card">
+          <h3>Формы работы</h3>
+          <p>Групповая работа, дискуссия, мини-проект, анализ кейса, домашнее задание, рефлексия в конце урока.</p>
+        </article>
+        <article class="teacher-card">
+          <h3>Критерии оценивания</h3>
+          <ul>
+            <li>Определяет источник и автора.</li>
+            <li>Отличает факт от мнения.</li>
+            <li>Находит экономические понятия.</li>
+            <li>Выявляет признаки манипуляции.</li>
+            <li>Аргументирует итоговый вывод.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="lesson-plan">
+        <h3>Пример сценария урока на 45 минут</h3>
+        <ol>
+          <li><strong>Актуализация, 5 минут:</strong> учитель показывает заголовок экономической новости или пост из социальной сети.</li>
+          <li><strong>Обсуждение, 7 минут:</strong> ученики высказывают первое впечатление и формулируют, почему сообщение вызывает или не вызывает доверие.</li>
+          <li><strong>Работа с анализатором, 12 минут:</strong> группы проверяют сообщение по вопросам сайта.</li>
+          <li><strong>Кейсы, 12 минут:</strong> группы разбирают разные ситуации и заполняют таблицу анализа.</li>
+          <li><strong>Мини-тест, 5 минут:</strong> ученики проходят тест для закрепления.</li>
+          <li><strong>Рефлексия, 4 минуты:</strong> каждый ученик формулирует одно правило безопасной работы с экономической информацией.</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><strong>Экономический медиарадар</strong> — образовательный сайт для курсовой работы по методике преподавания экономики.</p>
+    <p>Продукт можно использовать как приложение к курсовой, демонстрационный макет сайта или инструмент на уроке.</p>
+    <a href="#top">Вернуться наверх ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
